@@ -4,16 +4,16 @@ const express = require('express');
 const { globalErrorHandler } = require('./controllers/error.controller');
 
 // Routers
-const { usersRouter } = require('./routes/users.routes');
+const { usersRouter } = require('./routes/users.route');
 
 const app = express();
 
 // Enable incoming JSON data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/api/v1/users', usersRouter);
 
 // Endpoints
-app.use('/api/v1/users', usersRouter);
 
 app.use(globalErrorHandler);
 
