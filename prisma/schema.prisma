@@ -85,7 +85,6 @@ model Carts {
 
   updatedAt DateTime @updatedAt
 
-
   UserId Int
 
   status String @default("active")
@@ -109,7 +108,7 @@ model Orders {
 
   CartId Int
 
-  issuedAt Int // Need to modify this field scalar value
+  issuedAt DateTime @default(now()) 
 
   totalPrice Int
 
